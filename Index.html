@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Girlfriend?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hearts-container"></div>
+    <div class="container">
+        <h1 class="fade-in">Call me clingy but i wanted to ask you</h1>
+        <button class="reveal-button glow" onclick="revealMessage()">click me :3</button>
+        <div id="message" class="hidden">
+            <p class="animated-text">Will you be my girlfriend?</p>
+            <div class="button-group">
+                <button class="yes pulse" onclick="showResponse('yes')">Yes</button>
+                <button class="no" id="no-button">No</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

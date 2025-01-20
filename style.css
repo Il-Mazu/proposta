@@ -1,0 +1,163 @@
+/* Stile di base */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #000, #580000);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Contenitore principale */
+.container {
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    background: rgba(255, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(255, 0, 0, 0.4);
+}
+
+h1 {
+    font-size: 2em;
+    text-shadow: 2px 2px 10px rgba(189, 0, 0, 0.8);
+    animation: fadeIn 2s ease-out;
+}
+
+button {
+    background-color: #c23d3d;
+    color: #fff;
+    font-size: 1em;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: #b34a4a;
+    box-shadow: 0 5px 15px rgba(211, 63, 63, 0.6);
+    transform: scale(1.1);
+}
+
+.reveal-button {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+.glow {
+    box-shadow: 0 0 10px #ff6666, 0 0 20px #ff6666;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Testo animato */
+.animated-text {
+    font-size: 2.2em;
+    color: #ffcccc;
+    text-shadow: 0 2px 20px rgba(255, 255, 255, 0.7);
+    margin-top: 20px;
+    animation: textBounce 3s infinite ease-in-out;
+}
+
+/* Bottoni */
+.button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.yes {
+    background-color: #ff0000;
+    color: #fff;
+}
+
+.yes:hover {
+    background-color: #cc0000;
+}
+
+.no {
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Cuoricini */
+.hearts-container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff0000;
+    transform: rotate(45deg);
+    animation: float 8s infinite ease-in-out;
+}
+
+.heart::before, .heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff0000;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    left: 10px;
+    top: 0;
+}
+
+/* Animazioni */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(0.7);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-800px) scale(1.2);
+        opacity: 0;
+    }
+}
