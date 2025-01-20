@@ -2,8 +2,8 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to bottom, #000, #580000);
+    font-family: 'Cormorant Garamond', serif;
+    background: radial-gradient(circle, #1a1a1a, #580000);
     color: #fff;
     display: flex;
     justify-content: center;
@@ -18,15 +18,15 @@ body {
     width: 90%;
     max-width: 600px;
     text-align: center;
-    padding: 20px;
+    padding: 15px;
     box-sizing: border-box;
-    background: rgba(255, 0, 0, 0.1);
+    background: rgba(255, 192, 203, 0.1);
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(255, 0, 0, 0.4);
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 1.8rem;
     text-shadow: 2px 2px 10px rgba(189, 0, 0, 0.8);
     animation: fadeIn 2s ease-out;
 }
@@ -34,8 +34,8 @@ h1 {
 button {
     background-color: #c23d3d;
     color: #fff;
-    font-size: 1em;
-    padding: 12px 20px;
+    font-size: 1rem;
+    padding: 10px 16px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -63,9 +63,9 @@ button:hover {
 
 /* Testo animato */
 .animated-text {
-    font-size: 2.2em;
+    font-size: 1.6rem;
     color: #ffcccc;
-    text-shadow: 0 2px 20px rgba(255, 255, 255, 0.7);
+    text-shadow: 0 0 10px #ff6699, 0 0 20px #ff3366;
     margin-top: 20px;
     animation: textBounce 3s infinite ease-in-out;
 }
@@ -75,22 +75,33 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
     margin-top: 30px;
 }
 
 .yes {
-    background-color: #ff0000;
-    color: #fff;
+    background-color: #e91e63;
+    border: 2px solid #ffc0cb;
+    box-shadow: 0 0 10px #ff6699;
 }
 
 .yes:hover {
-    background-color: #cc0000;
+    background-color: #c2185b;
+    border-color: #f8bbd0;
 }
 
 .no {
-    position: relative;
+    background-color: transparent;
+    border: 2px solid #ff3366;
+    color: #ff6699;
     transition: transform 0.3s ease-in-out;
+}
+
+.no:hover {
+    background-color: #1a1a1a;
+    border-color: #ff6699;
+    color: #fff;
 }
 
 /* Cuoricini */
@@ -104,30 +115,37 @@ button:hover {
 
 .heart {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: #ff0000;
+    width: 15px;
+    height: 15px;
+    background-color: #e91e63;
     transform: rotate(45deg);
     animation: float 8s infinite ease-in-out;
+    opacity: 0.8;
+}
+
+.heart:nth-child(odd) {
+    width: 20px;
+    height: 20px;
+    background-color: #ffc0cb;
 }
 
 .heart::before, .heart::after {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: #ff0000;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
     border-radius: 50%;
 }
 
 .heart::before {
-    top: -10px;
+    top: -50%;
     left: 0;
 }
 
 .heart::after {
-    left: 10px;
     top: 0;
+    left: -50%;
 }
 
 /* Animazioni */
@@ -161,3 +179,23 @@ button:hover {
         opacity: 0;
     }
 }
+
+/* Controllo Musica */
+.music-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #e91e63;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
